@@ -20,12 +20,6 @@ local function get_theme(mode)
 	return theme or config.theme or "default"
 end
 
-local function get_mode()
-	local result = vim.fn.system("gnome_system_theme")
-	local mode = result:gsub("%s+", "")
-	return mode
-end
-
 -- Job Handler: Process gsettings output
 local function on_event(_, data, _)
 	local output = table.concat(data, "")
@@ -63,7 +57,7 @@ function M.setup(user_opts)
 	end
 
 	-- 1. INITIAL STATE: Get current setting synchronously
-	local mode = get_mode()
+	local mode = vim.fn.system("gnome_system_theme"):gsub("%s+", "")
 	local theme = get_theme(mode)
 	vim.cmd("colorscheme " .. theme)
 	vim.o.background = mode
