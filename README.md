@@ -15,11 +15,7 @@ This plugin is specifically designed for:
 
 ## 📦 Installation
 
-Since this is a local plugin you created within your config structure (`lua/gnome-theme/init.lua`), you can load it using your plugin manager.
-
 ### Using `lazy.nvim`
-
-Replace `/path/to/your/nvim/config` with the actual path to your Neovim configuration directory (e.g., `~/.config/nvim`).
 
 ```lua
 {
