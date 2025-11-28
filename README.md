@@ -6,14 +6,11 @@ It utilizes `gsettings monitor` to listen for system events, ensuring **instanta
 
 ---
 
-## ⚡ Prerequisites
+## Prerequisites
 
-This plugin is specifically designed for:
+This plugin is specifically designed for the **Gnome** desktop environment (or any environment that exposes the theme setting via `gsettings`).
 
-* **Linux** environment.
-* **Gnome** desktop environment (or any environment that exposes the theme setting via `gsettings`).
-
-## 📦 Installation
+## Installation
 
 ### Using `lazy.nvim`
 
@@ -40,7 +37,7 @@ This plugin is specifically designed for:
 
 -----
 
-## ⚙️ Configuration
+## Configuration
 
 The `setup()` function accepts a table with theme configuration.
 
