@@ -60,7 +60,7 @@ function M.setup(user_opts)
 
 	-- 2. MONITOR: Start background job
 	if M.sysObj then
-		M.sysObj:kill()
+		M.sysObj:kill("sigterm")
 	end
 
 	M.sysObj = vim.system({ "gsettings", "monitor", "org.gnome.desktop.interface", "color-scheme" }, {
