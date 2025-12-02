@@ -47,13 +47,9 @@ function M.setup(user_opts)
 		return
 	end
 
-	if vim.fn.executable("gnome_system_theme") == 0 then
-		vim.notify("gnome-theme: gnome-system-theme not found. Auto-switching disabled.", vim.log.levels.WARN)
-		return
-	end
-
 	-- 1. INITIAL STATE: Get current setting synchronously
-	local mode = vim.fn.system("gnome_system_theme"):gsub("%s+", "")
+	local mode = vim.fn.systemlist({"gsettings", "get", "org.gnome.desktop.interface", "color-scheme"})[1]
+	mode = mode == "'prefer-dark'" and "dark" or "light"
 	local theme = get_theme(mode)
 	vim.cmd("colorscheme " .. theme)
 	vim.o.background = mode
