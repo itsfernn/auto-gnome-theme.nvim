@@ -62,3 +62,12 @@ require("auto-gnome-theme").setup({
 })
 ```
 
+Here’s a concise note you can add to the README to explain the relevance of your plugin in light of the new Neovim and tmux features:
+
+---
+
+## Note
+Recent versions of Neovim (see [commit d460928](https://github.com/neovim/neovim/commit/d460928263d0ff53283f301dfcb85f5b6e17d2ac)) now support automatic theme switching based on the terminal’s light/dark mode (if your terminal supports it). However, `auto-gnome-theme.nvim` still offers some advantages:
+- **Granular control**: choose entirely different themes for light and dark modes, or use themes that have seperate dark / light themes.
+- **No flashing colors on startup** when using a light theme.
+
